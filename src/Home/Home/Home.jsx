@@ -4,6 +4,7 @@ import Gallary from '../Gallary/Gallary';
 import Category from '../Category/Category';
 import Testimonial from '../Testimonial/Testimonial';
 import Popular from '../Popular/Popular';
+import Creative from '../Creative/Creative';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Category></Category>
             <Testimonial></Testimonial>
             <Popular></Popular>
+            <Creative></Creative>
         </div>
     );
 };
