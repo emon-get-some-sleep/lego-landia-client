@@ -18,7 +18,7 @@ const Testimonial = () => {
           About Us
         </button>
       </div>
-      <div className="col-span-1 p-4 bg-white flex items-center justify-center flex-col  rounded-2xl">
+      <div className="col-span-1 p-4 hover:-translate-y-[10px] duration-300 bg-white flex items-center justify-center flex-col  rounded-2xl">
         <span className="flex justify-center">
           {" "}
           <FaQuoteRight className="text-[#2BB24C] text-6xl  text-center" />{" "}
@@ -35,7 +35,7 @@ const Testimonial = () => {
             </div>
         </div>
       </div>
-      <div className="bg-white col-span-1  flex items-center justify-center flex-col  rounded-2xl p-4">
+      <div className="bg-white col-span-1 hover:-translate-y-[10px] duration-300  flex items-center justify-center flex-col  rounded-2xl p-4">
         <span className="flex justify-center">
           {" "}
           <FaQuoteRight className="text-[#2BB24C] text-6xl  text-center" />{" "}
