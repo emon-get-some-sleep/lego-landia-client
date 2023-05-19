@@ -16,7 +16,7 @@ const Login = () => {
             <div className="relative my-[30px] w-[310px] border-b-2">
               <FaLocationArrow className="inline absolute right-[8px] text-white top-[20px] text-lg" />
               <input
-                className="w-full h-[50px] beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
+                className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="email"
                 name="email"
               />
@@ -27,7 +27,7 @@ const Login = () => {
             <div className="relative my-[30px] w-[310px] border-b-2">
               <FaLock className="inline absolute right-[8px] text-white top-[20px] text-lg" />
               <input
-                className="w-full h-[50px] beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
+                className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="password"
                 name="password"
               />
