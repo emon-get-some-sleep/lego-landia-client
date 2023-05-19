@@ -6,6 +6,7 @@ import SingleDetail from "./SingleDetail";
 const Category = () => {
   const [data, setData] = useState([]);
   
+  // default loading will show the educational data only 
   useEffect(() => {
     fetch('http://localhost:5000/toys?category=educational')
     .then(res => res.json())

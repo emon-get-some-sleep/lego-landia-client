@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import TableData from "./TableData";
 
 const AllToys = () => {
+  const [toys, setToys] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/alltoys')
+    .then(res => res.json())
+    .then(data => setToys(data))
+  }, [])
+  // console.log(toys);
   return (
     <div>
       <div className="overflow-x-auto w-full">
@@ -24,24 +33,10 @@ const AllToys = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
-              <th>
-                Emon Hoque
-              </th>
-              <td>
-                Technician Machine
-              </td>
-              <td>
-                $ 20
-              </td>
-              <td>Educational</td>
-              <td>
-                30
-              </td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
+
+           {
+            toys.map((toy, index) => <TableData key={index} toy={toy}></TableData>)
+           }
            
             
           </tbody>
