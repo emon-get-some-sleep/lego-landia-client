@@ -16,16 +16,16 @@ const Footer = () => {
                 <Link className='text-[#F5F6F7] hover:underline hover:text-gray-400' to='/contacts'>Contacts</Link>
             </div>
             <div className='flex items-center gap-4 mt-8'>
-                <Link className='border rounded-full p-2'>
+                <Link className='border hover:border-blue-400 rounded-full p-2'>
                     <FaFacebookF className='text-white' />
                 </Link>
-                <Link className='border rounded-full p-2'>
+                <Link className='border hover:border-blue-400  rounded-full p-2'>
                     <FaTwitter className='text-white' />
                 </Link>
-                <Link className='border rounded-full p-2'>
+                <Link className='border hover:border-blue-400  rounded-full p-2'>
                     <FaLinkedinIn className='text-white' />
                 </Link>
-                <Link className='border rounded-full p-2'>
+                <Link className='border hover:border-blue-400  rounded-full p-2'>
                     <FaInstagram className='text-white' />
                 </Link>
             </div>
