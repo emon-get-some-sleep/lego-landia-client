@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TableData = ({toy}) => {
     const {_id, picture, availableQuantity, rating, price, toyName, description, sellerEmail, sellerName, subCategory} = toy;
+    const navigate = useNavigate();
+    const showDetail = id => {
+        navigate(`/viewdetails/${id}`)
+    }
     return (
         <tr>
         <th>
@@ -18,7 +23,7 @@ const TableData = ({toy}) => {
           {availableQuantity}
         </td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          <button onClick={() => showDetail(_id)} className="btn btn-ghost btn-xs">details</button>
         </th>
       </tr>
     );

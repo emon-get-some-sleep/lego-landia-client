@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
   const legoData = useLoaderData();
-  console.log(legoData);
+  // console.log(legoData);
   const {_id, picture, availableQuantity, rating, price, toyName, description, sellerEmail, sellerName, } = legoData;
   return (
     <div className="mt-[140px] bg-[#1CD8D2] h-[100vh] flex items-center justify-center">
@@ -34,7 +34,7 @@ const ViewDetails = () => {
         <div className="flex-1">
             <h1 className="text-[#181D4E] font-bold text-[32px]">{sellerName}</h1>
             <h1 className="text-[#181D4E] font-bold text-[22px]">{sellerEmail}</h1>
-            <h1 className="text-[#FF8F00] font-bold text-[18px]"> <FaCalculator className="inline text-white mr-2" /> Available Quantity : ${availableQuantity}</h1>
+            <h1 className="text-white font-bold text-[18px]"> <FaCalculator className="inline text-white mr-2" /> Available Quantity : {availableQuantity}</h1>
             <p className="font-medium text-white">
              {description}
             </p>
