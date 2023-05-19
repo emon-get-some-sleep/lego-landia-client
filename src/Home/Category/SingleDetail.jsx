@@ -1,9 +1,14 @@
 import React from 'react';
 import { DynamicStar } from 'react-dynamic-star';
+import { useNavigate } from 'react-router-dom';
 
 const SingleDetail = ({each}) => {
-    const {picture, availableQuantity, rating, price, toyName
+    const {_id, picture, availableQuantity, rating, price, toyName
     } = each;
+    const navigate = useNavigate();
+    const viewDetails = id => {
+      navigate(`/viewdetails/${id}`);
+    }
     return (
         <div className="w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col items-center">
               <img
@@ -28,7 +33,7 @@ const SingleDetail = ({each}) => {
                   />
                 </div>
               </div>
-              <button className="bg-[#12AEE0] py-3 w-full px-5 text-white rounded-full hover:bg-[#12ace077]">
+              <button onClick={() => viewDetails(_id)} className="bg-[#12AEE0] py-3 w-full px-5 text-white rounded-full hover:bg-[#12ace077]">
                 View Details
               </button>
             </div>

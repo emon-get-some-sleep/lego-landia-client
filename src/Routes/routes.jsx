@@ -27,8 +27,9 @@ import AllToys from "../components/AllToys/AllToys";
           element: <Register></Register>
         },
         {
-          path: 'viewdetails',
-          element: <ViewDetails></ViewDetails>
+          path: '/viewdetails/:id',
+          element: <ViewDetails></ViewDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
         },
         {
           path: 'alltoys',
