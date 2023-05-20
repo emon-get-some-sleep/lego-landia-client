@@ -14,7 +14,7 @@ const Home = () => {
             <Category></Category>
             <Testimonial></Testimonial>
             <Popular></Popular>
-            {/* <Creative></Creative> */}
+            <Creative></Creative>
         </div>
     );
 };
