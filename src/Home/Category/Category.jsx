@@ -25,10 +25,10 @@ const Category = () => {
   // console.log(data);
   return (
     <div>
-      <h3 className="text-center font-bold text-2xl">Categories</h3>
+      <h3 className="text-center font-bold text-4xl my-[40px]">Categories</h3>
       <Tabs>
         <TabList>
-          <div className="cursor-pointer flex justify-between bg-gradient-to-r from-[#7474BF] to-[#348AC7] p-4 text-white">
+          <div className="cursor-pointer grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] bg-gradient-to-r from-[#7474BF] to-[#348AC7] p-4 text-white">
             <Tab onClick={() => fetchEducational('educational')} className="bg-[#12AEE0] font-bold text-white px-8 py-3 rounded-lg">
               Educational
             </Tab>
@@ -45,7 +45,7 @@ const Category = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             
            {
             data.map(each => <SingleDetail key={each._id} each={each}></SingleDetail>)
@@ -55,7 +55,7 @@ const Category = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
            
             
             
@@ -65,7 +65,7 @@ const Category = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             
            
             
@@ -75,7 +75,7 @@ const Category = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
            
             
             

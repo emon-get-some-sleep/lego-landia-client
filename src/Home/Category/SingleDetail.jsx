@@ -10,9 +10,9 @@ const SingleDetail = ({each}) => {
       navigate(`/viewdetails/${id}`);
     }
     return (
-        <div className="w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col items-center">
+        <div className="w-full sm:w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col items-center">
               <img
-                className="w-full h-[200px] rounded-lg"
+                className="w-full sm:w-[400px] h-[200px] rounded-lg"
                 src={picture}
                 alt=""
               />
