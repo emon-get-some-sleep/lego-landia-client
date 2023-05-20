@@ -65,8 +65,12 @@ const NavigationBar = () => {
         :
         <>
         <img src={user.photoURL} className="w-[50px] h-[50px] rounded-[50%]" alt="" />
-        <Link to="/addtoy">Add A Toy</Link>
-        <Link to="/addtoy">My Toys</Link>
+        <Link to="/mytoys">
+        <button className="text-sm px-3 hover:bg-[#104d63] font-bold h-[35px] text-white bg-[#12AEE0]">My Toys</button>
+        </Link>
+        <Link to="/addtoy">
+        <button className="text-sm px-3 hover:bg-[#104d63] font-bold h-[35px] text-white bg-[#12AEE0]">Add A Toy</button>
+        </Link>
         <button onClick={handleLogOut} className="text-sm bg-[#12AEE0] text-white">Sign Out</button>
         </>
         }
