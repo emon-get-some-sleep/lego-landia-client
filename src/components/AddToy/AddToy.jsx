@@ -12,7 +12,9 @@ const AddToy = () => {
     // "subCategory": "educational"
     const handleAddingToys = (event) => {
         event.preventDefault();
+
         const form = event.target;
+        const toyName = form.name.value;
         const sellerName = form.name.value;
         const picture = form.photo.value;
         const sellerEmail = form.email.value;
@@ -21,8 +23,19 @@ const AddToy = () => {
         const rating = form.rating.value;
         const description = form.description.value;
         const subCategory = form.subcategory.value;
-        const newToy = {sellerName, sellerEmail, price, availableQuantity, description, picture, rating,subCategory};
+        const newToy = {toyName, sellerName, sellerEmail, price, availableQuantity, description, picture, rating,subCategory};
         console.log(newToy);
+        fetch('http://localhost:5000/newtoy', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(newToy)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+        })
     }
   return (
     <div className="h-auto py-[40px] flex items-center justify-center bg-[#2BC0E4]">
@@ -38,7 +51,7 @@ const AddToy = () => {
               className="h-[50px] pl-3 w-full border-none outline-none font-semibold rounded-lg"
               type="text"
               placeholder="Toy Name"
-              name="name"
+              name="name" required
             />
           </div>
           <div className="relative my-[50px]">
@@ -50,6 +63,7 @@ const AddToy = () => {
               type="text"
               placeholder="Photo URL"
               name="photo"
+              required
             />
           </div>
           <div className="relative my-[50px]">
@@ -61,6 +75,7 @@ const AddToy = () => {
               type="text"
               placeholder="Seller Name"
               name="seller"
+              required
             />
           </div>
           <div className="relative my-[50px] flex gap-3">
@@ -73,6 +88,7 @@ const AddToy = () => {
               type="text"
               placeholder="Price"
               name="price"
+              required
             />
             </div>
             <div className="flex-1">
@@ -84,6 +100,7 @@ const AddToy = () => {
               type="text"
               placeholder="Rating"
               name="rating"
+              required
             />
             </div>
           </div>
@@ -96,6 +113,7 @@ const AddToy = () => {
               type="email"
               placeholder="Seller Email"
               name="email"
+              required
             />
           </div>
           <div className="relative my-[50px] flex gap-3">
@@ -108,10 +126,11 @@ const AddToy = () => {
               type="text"
               placeholder="Quantity"
               name="quantity"
+              required
             />
             </div>
-            <select name="subcategory" className="rounded-lg px-2 font-semibold">
-              <option value="" selected disabled>
+            <select name="subcategory" className="rounded-lg px-2 font-semibold" required>
+              <option defaultValue="" disabled>
                 Select Sub Category
               </option>
               <option className="font-semibold py-2" value="educational">Educational</option>
@@ -129,6 +148,7 @@ const AddToy = () => {
               type="text"
               placeholder="Toy Description"
               name="description"
+              required
             />
           </div>
           <div>
