@@ -16,7 +16,9 @@ const NavigationBar = () => {
         <Link to='/'  className="font-semibold text-[#141414] hover:text-violet-600 duration-300">Contact</Link>
       </div>
       <div>
+        <Link to="/login">
         <button className="bg-violet-400 px-6 py-3 rounded-lg text-white">Login</button>
+        </Link>
       </div>
     </div>
   );

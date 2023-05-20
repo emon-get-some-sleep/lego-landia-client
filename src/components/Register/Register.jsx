@@ -2,6 +2,16 @@ import React from 'react';
 import { FaCameraRetro, FaGoogle, FaHouseUser, FaLocationArrow, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Register = () => {
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const user = {email, password, name, photo};
+    console.log(user);
+  }
     return (
         <div className="h-[100vh] flex items-center lego-bg justify-center bg-blue-500">
       {/* <div>
@@ -10,7 +20,7 @@ const Register = () => {
 
       <div className="w-[400px] h-[600px] bg-transparent border-2 backdrop-blur-[15px] rounded-lg flex items-center justify-center relative">
         <div>
-          <form>
+          <form onSubmit={handleRegister}>
             <h2 className="font-bold text-xl text-center text-white">Register</h2>
             <div className="relative my-[30px] w-[310px] border-b-2">
               <FaHouseUser className="inline absolute right-[8px] text-white top-[20px] text-lg" />

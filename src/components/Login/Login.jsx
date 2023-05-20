@@ -3,15 +3,23 @@ import { FaGoogle, FaLocationArrow, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Login.css";
 const Login = () => {
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const user = {email, password};
+    console.log(user);
+  }
   return (
-    <div className="h-[100vh] flex items-center lego-bg justify-center bg-blue-500">
+    <div className="h-[100vh] mt-[60px] flex items-center lego-bg justify-center bg-blue-500">
       {/* <div>
                 <img className='w-[400px] border-2 rounded-lg h-[400px]' src="https://images.pexels.com/photos/298825/pexels-photo-298825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
             </div> */}
 
       <div className="w-[400px] h-[450px] bg-transparent border-2 backdrop-blur-[15px] rounded-lg flex items-center justify-center relative">
         <div>
-          <form>
+          <form onSubmit={handleLogin}>
             <h2 className="font-bold text-xl text-center text-white">Login</h2>
             <div className="relative my-[30px] w-[310px] border-b-2">
               <FaLocationArrow className="inline absolute right-[8px] text-white top-[20px] text-lg" />
