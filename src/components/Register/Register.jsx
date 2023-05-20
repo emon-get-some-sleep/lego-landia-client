@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { FaCameraRetro, FaGoogle, FaHouseUser, FaLocationArrow, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 const Register = () => {
   const {newUser,  signUpWithGoogle } = useContext(AuthContext);
   const handleRegister = (event) => {
@@ -27,7 +28,12 @@ const Register = () => {
     signUpWithGoogle()
     .then(result => {
       const user = result.user;
-      console.log(user);
+      // console.log(user);
+      Swal.fire(
+        'Registered Successfully!',
+        'Welcome to Lego Landia',
+        'success'
+      )
     })
     .catch(error => {
       console.log(error);
@@ -109,11 +115,12 @@ const Register = () => {
                 </Link>
               </p>
             </div>
-            <div className=''>
+           
+          </form>
+          <div className=''>
                 <button onClick={handleGoogleSignUp} className='text-white flex items-center justify-center gap-2 hover:bg-white hover:text-black text-center font-bold text-sm w-full mb-3 p-3 h-[40px] border-2 rounded-lg'><span>Sign up with</span> <FaGoogle className='inline ' /></button>
                 
             </div>
-          </form>
         </div>
       </div>
     </div>
