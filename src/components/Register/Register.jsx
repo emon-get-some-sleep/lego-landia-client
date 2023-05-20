@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaCameraRetro, FaGoogle, FaHouseUser, FaLocationArrow, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 const Register = () => {
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
   const {newUser,  signUpWithGoogle } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
@@ -12,15 +14,37 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+    if(password.length < 6) {
+      
+      Swal.fire({
+        icon: 'error',
+        title:'password must be at least six characters long',
+        text: 'Please enter a valid password'
+        
+      })
+      return;
+    }
     // const user = {email, password, name, photo};
     // console.log(user);
     newUser(name, photo, email, password)
     .then(result => {
       const user = result.user;
-      console.log(user);
+      // console.log(user);
+      Swal.fire(
+        'Registered Successfully!',
+        'Welcome to Lego Landia',
+        'success'
+      )
+      navigate('/')
     })
     .catch(error => {
-      console.log(error);
+      setError(error.message);
+      Swal.fire({
+        icon: 'error',
+        title: error,
+        text: 'Please enter a valid password'
+        
+      })
     })
   }
 
@@ -34,9 +58,16 @@ const Register = () => {
         'Welcome to Lego Landia',
         'success'
       )
+      navigate('/')
     })
     .catch(error => {
-      console.log(error);
+      const warning = error.message;
+      Swal.fire({
+        icon: 'error',
+        title: warning,
+        text: 'We are extremly sorry for this inconvenient'
+        
+      })
     })
   }
     return (
@@ -45,7 +76,7 @@ const Register = () => {
                 <img className='w-[400px] border-2 rounded-lg h-[400px]' src="https://images.pexels.com/photos/298825/pexels-photo-298825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
             </div> */}
 
-      <div className="w-[400px] h-[600px] bg-transparent border-2 backdrop-blur-[15px] rounded-lg flex items-center justify-center relative">
+      <div className="w-[400px] h-auto bg-transparent border-2 backdrop-blur-[15px] rounded-lg flex items-center justify-center relative">
         <div>
           <form onSubmit={handleRegister}>
             <h2 className="font-bold text-xl text-center text-white">Register</h2>
@@ -55,6 +86,7 @@ const Register = () => {
                 className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="text"
                 name="name"
+                required
               />
               <label className="absolute duration-300 cursor-none top-[50%] left-[5px] text-white -translate-y-[50%]">
                 Name
@@ -66,6 +98,7 @@ const Register = () => {
                 className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="email"
                 name="email"
+                required
               />
               <label className="absolute duration-300 cursor-none top-[50%] left-[5px] text-white -translate-y-[50%]">
                 Email
@@ -77,6 +110,7 @@ const Register = () => {
                 className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="text"
                 name="photo"
+                required
               />
               <label className="absolute duration-300 cursor-none top-[50%] left-[5px] text-white -translate-y-[50%]">
                 PhotoURL
@@ -88,6 +122,7 @@ const Register = () => {
                 className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="password"
                 name="password"
+                required
               />
               <label className="absolute duration-300 cursor-none top-[50%] left-[5px] text-white -translate-y-[50%]">
                 Password
@@ -117,6 +152,7 @@ const Register = () => {
             </div>
            
           </form>
+          
           <div className=''>
                 <button onClick={handleGoogleSignUp} className='text-white flex items-center justify-center gap-2 hover:bg-white hover:text-black text-center font-bold text-sm w-full mb-3 p-3 h-[40px] border-2 rounded-lg'><span>Sign up with</span> <FaGoogle className='inline ' /></button>
                 
