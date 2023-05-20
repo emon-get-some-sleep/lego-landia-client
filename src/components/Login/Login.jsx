@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaGoogle, FaLocationArrow, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 const Login = () => {
+
+  const navigate = useNavigate();
+  const { signIn, signInWithGoogle} = useContext(AuthContext);
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -10,6 +16,46 @@ const Login = () => {
     const password = form.password.value;
     const user = {email, password};
     console.log(user);
+    signIn(email, password)
+    .then(result => {
+      const user = result.user;
+      Swal.fire(
+        'Login Successful!',
+        'Welcome Back',
+        'success'
+      )
+      navigate('/')
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: error.message,
+        text: 'We are sorry for this inconvenient'
+        
+      })
+    })
+  }
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+    .then(result => {
+      const user = result.user;
+      // console.log(user);
+      Swal.fire(
+        'Logged In Successfully!',
+        'Welcome Back',
+        'success'
+      )
+      navigate('/')
+    })
+    .catch(error => {
+      const warning = error.message;
+      Swal.fire({
+        icon: 'error',
+        title: warning,
+        text: 'We are extremly sorry for this inconvenient'
+        
+      })
+    })
   }
   return (
     <div className="h-[100vh] mt-[60px] flex items-center lego-bg justify-center bg-blue-500">
@@ -27,6 +73,7 @@ const Login = () => {
                 className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="email"
                 name="email"
+                required
               />
               <label className="absolute duration-300 cursor-none top-[50%] left-[5px] text-white -translate-y-[50%]">
                 Email
@@ -38,6 +85,7 @@ const Login = () => {
                 className="w-full h-[50px] text-white beautiful-input transparent border-none bg-transparent pr-[35px] pl-[5px] outline-none"
                 type="password"
                 name="password"
+                required
               />
               <label className="absolute duration-300 cursor-none top-[50%] left-[5px] text-white -translate-y-[50%]">
                 Password
@@ -65,11 +113,12 @@ const Login = () => {
                 </Link>
               </p>
             </div>
-            <div className=''>
-                <button className='text-white flex items-center justify-center gap-2 hover:bg-white hover:text-black text-center font-bold text-sm w-full mb-3 p-3 h-[40px] border-2 rounded-lg'><span>Sign In with</span> <FaGoogle className='inline ' /></button>
+            
+          </form>
+          <div className=''>
+                <button onClick={handleGoogleSignIn} className='text-white flex items-center justify-center gap-2 hover:bg-white hover:text-black text-center font-bold text-sm w-full mb-3 p-3 h-[40px] border-2 rounded-lg'><span>Sign In with</span> <FaGoogle className='inline ' /></button>
                 
             </div>
-          </form>
         </div>
       </div>
     </div>
