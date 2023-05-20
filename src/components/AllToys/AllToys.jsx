@@ -15,14 +15,14 @@ const AllToys = () => {
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
-          <thead>
-            <tr>
+          <thead className="text-green-500">
+            <tr className="">
               {/* <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
                 </label>
               </th> */}
-              <th>Seller</th>
+              <th className="">Seller</th>
               <th>Toy Name</th>
               <th>Price</th>
               <th>Sub-category</th>
