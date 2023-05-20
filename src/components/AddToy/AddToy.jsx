@@ -1,12 +1,35 @@
 import React from "react";
 
 const AddToy = () => {
+    // "picture": "https://www.lego.com/cdn/cs/set/assets/blt2f3b7ee4dca83409/31090.jpg?format=webply&fit=bounds&quality=100&width=320&height=320&dpr=1",
+    // "toyName": "Coding Robots",
+    // "sellerName": "CodeBricks",
+    // "sellerEmail": "info@codebricks.com",
+    // "price": 59.99,
+    // "rating": 4.4,
+    // "availableQuantity": 10,
+    // "description": "Learn coding and robotics with the Coding Robots set, allowing kids to program and control their own robot creations.",
+    // "subCategory": "educational"
+    const handleAddingToys = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const sellerName = form.name.value;
+        const picture = form.photo.value;
+        const sellerEmail = form.email.value;
+        const price = form.price.value;
+        const availableQuantity = form.quantity.value;
+        const rating = form.rating.value;
+        const description = form.description.value;
+        const subCategory = form.subcategory.value;
+        const newToy = {sellerName, sellerEmail, price, availableQuantity, description, picture, rating,subCategory};
+        console.log(newToy);
+    }
   return (
     <div className="h-auto py-[40px] flex items-center justify-center bg-[#2BC0E4]">
 
       <div className="w-[500px] ">
         <h2 className="font-bold text-center text-[32px] text-white my-[50px]">ADD A PRODUCT</h2>
-        <form className="">
+        <form onSubmit={handleAddingToys} className="">
           <div className="relative my-[20px]">
             <label className="absolute  -top-[60%] font-bold text-lg">
               Name
@@ -72,7 +95,7 @@ const AddToy = () => {
               className="h-[50px] pl-3 w-full border-none outline-none font-semibold rounded-lg"
               type="email"
               placeholder="Seller Email"
-              name="seller-email"
+              name="email"
             />
           </div>
           <div className="relative my-[50px] flex gap-3">
@@ -87,7 +110,7 @@ const AddToy = () => {
               name="quantity"
             />
             </div>
-            <select className="rounded-lg px-2 font-semibold">
+            <select name="subcategory" className="rounded-lg px-2 font-semibold">
               <option value="" selected disabled>
                 Select Sub Category
               </option>
