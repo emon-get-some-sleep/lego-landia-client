@@ -7,10 +7,17 @@ const MyToys = () => {
     const {user} = useContext(AuthContext);
 
     useEffect(() => {
-      fetch(`http://localhost:5000/mytoys?email=${user.email}`)
+      fetch(`http://localhost:5000/mytoys?email=${user?.email}`)
       .then(res => res.json())
       .then(data => setToys(data))
-    }, [])
+    }, [user])
+    // useEffect(() => {
+    //   async() => {
+    //     const res = await fetch(`http://localhost:5000/mytoys?email=${user?.email}`);
+    //     const data = await res.json();
+    //     setToys(data);
+    //   }
+    // }, [user])
     console.log(toys);
     
   return (
@@ -26,7 +33,8 @@ const MyToys = () => {
               <th>Sub-category</th>
               <th>Available Quantity</th>
 
-              <th>View Details</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
