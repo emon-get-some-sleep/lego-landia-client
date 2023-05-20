@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaCameraRetro, FaGoogle, FaHouseUser, FaLocationArrow, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Register = () => {
+  const {newUser,  signUpWithGoogle } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -9,8 +11,27 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    const user = {email, password, name, photo};
-    console.log(user);
+    // const user = {email, password, name, photo};
+    // console.log(user);
+    newUser(name, photo, email, password)
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
+  const handleGoogleSignUp = () => {
+    signUpWithGoogle()
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
     return (
         <div className="h-[100vh] flex items-center lego-bg justify-center bg-blue-500">
@@ -89,7 +110,7 @@ const Register = () => {
               </p>
             </div>
             <div className=''>
-                <button className='text-white flex items-center justify-center gap-2 hover:bg-white hover:text-black text-center font-bold text-sm w-full mb-3 p-3 h-[40px] border-2 rounded-lg'><span>Sign up with</span> <FaGoogle className='inline ' /></button>
+                <button onClick={handleGoogleSignUp} className='text-white flex items-center justify-center gap-2 hover:bg-white hover:text-black text-center font-bold text-sm w-full mb-3 p-3 h-[40px] border-2 rounded-lg'><span>Sign up with</span> <FaGoogle className='inline ' /></button>
                 
             </div>
           </form>
