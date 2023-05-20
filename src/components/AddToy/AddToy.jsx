@@ -1,15 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddToy = () => {
-    // "picture": "https://www.lego.com/cdn/cs/set/assets/blt2f3b7ee4dca83409/31090.jpg?format=webply&fit=bounds&quality=100&width=320&height=320&dpr=1",
-    // "toyName": "Coding Robots",
-    // "sellerName": "CodeBricks",
-    // "sellerEmail": "info@codebricks.com",
-    // "price": 59.99,
-    // "rating": 4.4,
-    // "availableQuantity": 10,
-    // "description": "Learn coding and robotics with the Coding Robots set, allowing kids to program and control their own robot creations.",
-    // "subCategory": "educational"
+    const {user} = useContext(AuthContext);
     const handleAddingToys = (event) => {
         event.preventDefault();
 
@@ -38,10 +31,10 @@ const AddToy = () => {
         })
     }
   return (
-    <div className="h-auto py-[40px] flex items-center justify-center bg-[#2BC0E4]">
+    <div className="h-auto  md:py-[40px] flex items-center justify-center bg-[#2BC0E4]">
 
-      <div className="w-[500px] ">
-        <h2 className="font-bold text-center text-[32px] text-white my-[50px]">ADD A PRODUCT</h2>
+      <div className="w-full md:w-[500px] ">
+        <h2 className="font-bold text-center text-base md:text-[32px] text-white my-[50px]">ADD A PRODUCT</h2>
         <form onSubmit={handleAddingToys} className="">
           <div className="relative my-[20px]">
             <label className="absolute  -top-[60%] font-bold text-lg">
@@ -75,6 +68,7 @@ const AddToy = () => {
               type="text"
               placeholder="Seller Name"
               name="seller"
+              defaultValue={user?.displayName}
               required
             />
           </div>
@@ -112,11 +106,13 @@ const AddToy = () => {
               className="h-[50px] pl-3 w-full border-none outline-none font-semibold rounded-lg"
               type="email"
               placeholder="Seller Email"
+              
+              defaultValue={user?.email}
               name="email"
               required
             />
           </div>
-          <div className="relative my-[50px] flex gap-3">
+          <div className="relative my-[50px] flex  gap-3">
             <div className="flex-1">
             <label className="absolute  -top-[60%] font-bold text-lg">
               Available Quantity
@@ -129,7 +125,7 @@ const AddToy = () => {
               required
             />
             </div>
-            <select name="subcategory" className="rounded-lg px-2 font-semibold" required>
+            <select name="subcategory" className="rounded-lg flex-1 px-2 font-semibold" required>
               <option defaultValue="" disabled>
                 Select Sub Category
               </option>
@@ -153,7 +149,7 @@ const AddToy = () => {
           </div>
           <div>
           <input
-              className="w-full h-[40px] rounded-[40px] bg-white border-none outline-none font-bold cursor-pointer"
+              className="w-full h-[40px] rounded-lg my-4 bg-white border-none outline-none font-bold cursor-pointer"
               type="submit"
               value="Submit"
             />

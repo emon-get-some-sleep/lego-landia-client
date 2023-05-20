@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const TableData = ({toy}) => {
+const MySingleToys = ({toy}) => {
     const {_id, picture, availableQuantity, rating, price, toyName, description, sellerEmail, sellerName, subCategory} = toy;
     const navigate = useNavigate();
     const showDetail = id => {
@@ -29,4 +29,4 @@ const TableData = ({toy}) => {
     );
 };
 
-export default TableData;
+export default MySingleToys;
