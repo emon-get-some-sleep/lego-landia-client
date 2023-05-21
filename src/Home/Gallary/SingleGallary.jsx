@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LazyLoad from "react-lazy-load";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const SingleGallary = ({ each }) => {
   const { img, title, description } = each;
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="card-container w-full sm:w-[320px] h-[500px] overflow-hidden rounded-[20px] border-[8px]  relative">
+    <div  data-aos="fade-left" data-aos-duration="500" data-aos-delay="1000"  className="card-container w-full sm:w-[320px] h-[500px] overflow-hidden rounded-[20px] border-[8px]  relative">
       <LazyLoad height={762}>
         <img
           className="w-full h-full object-cover rounded-2xl"

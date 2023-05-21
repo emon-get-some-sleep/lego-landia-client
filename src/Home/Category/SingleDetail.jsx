@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DynamicStar } from 'react-dynamic-star';
 import LazyLoad from 'react-lazy-load';
 import { useNavigate } from 'react-router-dom';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const SingleDetail = ({each}) => {
     const {_id, picture, availableQuantity, rating, price, toyName
     } = each;
@@ -10,8 +11,11 @@ const SingleDetail = ({each}) => {
     const viewDetails = id => {
       navigate(`/viewdetails/${id}`);
     }
+    useEffect(() => {
+      AOS.init();
+    }, []);
     return (
-        <div className="w-full sm:w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col items-center">
+        <div  data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" className="w-full sm:w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col items-center">
               <LazyLoad>
               <img
                 className="w-full my-3 sm:w-[400px] h-[200px] rounded-lg"

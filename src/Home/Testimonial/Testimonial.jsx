@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Testimonial.css";
 import { FaBeer, FaQuoteRight } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Testimonial = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="child-bg flex items-center justify-center p-[50px] md:p-[100px]">
       <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div className="w-full md:col-span-1">
+        <div  data-aos="fade-left" data-aos-duration="500" data-aos-delay="1000" className="w-full md:col-span-1">
           <h2 className="text-sm font-bold text-[#F5F6F7]">Testiomonial</h2>
           <h1 className=" text-base md:text-[35px] my-[21px] leading-10 font-bold text-white">
             What Our Clients Say About Us
@@ -46,7 +51,7 @@ const Testimonial = () => {
             </div>
           </div>
         </div>
-        <div className="md:col-span-1 p-4 hover:-translate-y-[10px] duration-300 bg-white flex md:items-center justify-center flex-col  rounded-2xl">
+        <div  data-aos="fade-right" data-aos-duration="500" data-aos-delay="1000"  className="md:col-span-1 p-4 hover:-translate-y-[10px] duration-300 bg-white flex md:items-center justify-center flex-col  rounded-2xl">
           <span className="flex justify-center">
             {" "}
             <FaQuoteRight className="text-[#2BB24C] text-base md:text-6xl  text-center" />{" "}

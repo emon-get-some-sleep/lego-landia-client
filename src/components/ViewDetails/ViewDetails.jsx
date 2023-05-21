@@ -2,6 +2,7 @@ import React from "react";
 import { DynamicStar } from "react-dynamic-star";
 import { Helmet } from "react-helmet-async";
 import { FaCalculator } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
@@ -15,11 +16,13 @@ const ViewDetails = () => {
       </Helmet>
       <div className="flex flex-col lg:flex-row justify-between gap-6 md:p-5">
         <div className="bg-white flex-1 rounded-lg p-[40px]">
+          <LazyLoad>
           <img
             className=" rounded-lg shadow-lg"
             src={picture}
             alt=""
           />
+          </LazyLoad>
           <h2 className="text-[#181D4E] mt-[30px] font-bold text-[22px] md:text-[32px] my-4">
             {toyName}
           </h2>

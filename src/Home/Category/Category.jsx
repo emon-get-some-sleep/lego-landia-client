@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import { DynamicStar } from "react-dynamic-star";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import SingleDetail from "./SingleDetail";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Category = () => {
   const [data, setData] = useState([]);
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   
   // default loading will show the educational data only 
   useEffect(() => {
@@ -27,7 +33,7 @@ const Category = () => {
     <div className="my-[80px]">
       <h3 className="text-center font-bold text-4xl my-[40px]">Categories</h3>
       <Tabs>
-        <TabList>
+        <TabList  data-aos="fade-left" data-aos-duration="500" data-aos-delay="1000">
           <div className="cursor-pointer grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] bg-gradient-to-r from-[#7474BF] to-[#348AC7] p-4 text-white">
             <Tab onClick={() => fetchEducational('educational')} className="bg-[#12AEE0] hover:bg-[#0c6e8e] font-bold text-white px-8 py-3 rounded-lg">
               Educational
