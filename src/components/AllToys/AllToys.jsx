@@ -25,12 +25,12 @@ const AllToys = () => {
       <div className="flex items-center w-full justify-center bg-slate-500">
         <form onSubmit={searchResult} className="w-full">
           <div className="relative w-full flex flex-col items-center my-[40px]">
-            <label className="absolute  -top-[60%] font-bold text-lg">
+            <label className="absolute -top-[20%] md:-top-[60%] font-bold text-sm md:text-lg">
               Search Product By Name
             </label>
-            <div className="w-full flex items-center justify-center gap-3">
+            <div className="w-full flex flex-col md:flex-row items-center justify-center gap-3">
               <input
-                className="h-[50px] pl-3 w-1/2  border-none outline-none font-semibold rounded-lg"
+                className="h-[50px] pl-3 w-full md:w-1/2  border-none outline-none font-semibold rounded-lg"
                 type="text"
                 placeholder="Search"
                 name="search"
