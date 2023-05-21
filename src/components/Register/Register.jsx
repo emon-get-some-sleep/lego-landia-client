@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState('');
-  const {newUser,  signUpWithGoogle } = useContext(AuthContext);
+  const {newUser,  signUpWithGoogle, updateProfile, auth } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -29,7 +29,11 @@ const Register = () => {
     newUser(name, photo, email, password)
     .then(result => {
       const user = result.user;
-      // console.log(user);
+      updateProfile(auth.currentUser, {
+        displayName: name, photoURL: photo
+
+      })
+      console.log(user);
       Swal.fire(
         'Registered Successfully!',
         'Welcome to Lego Landia',

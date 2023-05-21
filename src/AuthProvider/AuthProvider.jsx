@@ -49,6 +49,7 @@ const AuthProvider = ({children}) => {
      }, [])
 
     const authBank = {
+        auth,
         user,
         isLoading,
         newUser,
@@ -56,6 +57,7 @@ const AuthProvider = ({children}) => {
         logOut,
         signUpWithGoogle,
         signInWithGoogle,
+        updateProfile
 
     }
     return (
