@@ -5,7 +5,22 @@
 Lego Landia is a website dedicated to selling a wide variety of Lego sets. With a focus on providing a diverse range of Lego products, Lego Landia aims to cater to the interests and creativity of Lego enthusiasts of all ages.
 
 
+
 Live Website Link is here https://lego-landia.web.app/
+
+# Technology used to built the website
+
+* React
+* React-router-dom 
+* Firebase
+* Nodejs
+* Mongodb
+* Vercel as server
+* Tailwind
+* Daisy ui as component library
+* React Helemet
+* And More
+
 
 The website is built using React, a popular JavaScript library for building user interfaces, along with React Router for seamless navigation between pages. It utilizes Firebase, a cloud-based platform, for various functionalities such as authentication, database management, and hosting.
 
