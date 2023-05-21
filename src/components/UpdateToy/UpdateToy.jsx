@@ -46,7 +46,7 @@ const UpdateToy = () => {
       subCategory,
     };
     // console.log(newToy);
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

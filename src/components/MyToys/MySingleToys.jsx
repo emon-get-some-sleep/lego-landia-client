@@ -19,7 +19,7 @@ const MySingleToys = ({toy, toys, setToys}) => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/delete/${id}`, {
+          fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/delete/${id}`, {
           method: 'DELETE',
           
         })

@@ -9,13 +9,13 @@ const MyToys = () => {
     const {user} = useContext(AuthContext);
 
     useEffect(() => {
-      fetch(`http://localhost:5000/mytoys?email=${user?.email}`)
+      fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/mytoys?email=${user?.email}`)
       .then(res => res.json())
       .then(data => setToys(data))
     }, [user])
     // useEffect(() => {
     //   async() => {
-    //     const res = await fetch(`http://localhost:5000/mytoys?email=${user?.email}`);
+    //     const res = await fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/mytoys?email=${user?.email}`);
     //     const data = await res.json();
     //     setToys(data);
     //   }

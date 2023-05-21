@@ -8,7 +8,7 @@ const Category = () => {
   
   // default loading will show the educational data only 
   useEffect(() => {
-    fetch('http://localhost:5000/toys?category=educational')
+    fetch('https://lego-landia-server-emon-get-some-sleep.vercel.app/toys?category=educational')
     .then(res => res.json())
     .then(data => setData(data))
   }, [])
@@ -17,7 +17,7 @@ const Category = () => {
 
   const fetchEducational = (query) => {
    
-      fetch(`http://localhost:5000/toys?category=${query}`)
+      fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/toys?category=${query}`)
       .then(res => res.json())
       .then(data => setData(data))
     

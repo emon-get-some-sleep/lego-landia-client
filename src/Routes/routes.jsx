@@ -36,7 +36,7 @@ import BlogSection from "../components/BlogSection/BlogSection";
         {
           path: '/viewdetails/:id',
           element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          loader: ({params}) => fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/toys/${params.id}`)
         },
         {
           path: 'alltoys',
@@ -53,7 +53,7 @@ import BlogSection from "../components/BlogSection/BlogSection";
         {
           path: '/update/:id',
           element: <UpdateToy></UpdateToy>,
-          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          loader: ({params}) => fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/toys/${params.id}`)
         },
         {
           path: 'blog',

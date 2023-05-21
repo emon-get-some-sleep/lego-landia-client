@@ -1,12 +1,16 @@
 import React, { useContext, useState } from "react";
 import { FaBars} from "react-icons/fa";
 import logo from "/favicon2.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 const NavigationBar = () => {
   const {user, logOut} = useContext(AuthContext)
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
+  const landia = () => {
+    navigate('/');
+  }
   const handleLogOut = () => {
     logOut();
     Swal.fire(
@@ -18,7 +22,7 @@ const NavigationBar = () => {
   return (
     <div>
     <div className="flex  items-center justify-between mt-[40px]">
-      <div className="flex items-center">
+      <div onClick={landia} className="flex items-center">
         <img className="w-[40px] h-[70px]" src={logo} alt="" />
         <h2 className="font-bold text-[22px] md:text-2xl">Lego Landia</h2>
       </div>
@@ -58,7 +62,7 @@ const NavigationBar = () => {
     {showMenu && <div className="flex md:hidden flex-col gap-3 items-center"> 
         
         <Link className="font-medium text-xl" to="/">Home</Link>
-        <Link className="font-medium text-xl" to="/Blogs">Blogs</Link>
+        <Link className="font-medium text-xl" to="/blog">Blogs</Link>
         <Link className="font-medium text-xl" to="/about">About</Link>
         <Link className="font-medium text-xl" to="/alltoys">All Toys</Link>
         

@@ -20,7 +20,7 @@ const AddToy = () => {
         const subCategory = form.subcategory.value;
         const newToy = {toyName, sellerName, sellerEmail, price, availableQuantity, description, picture, rating,subCategory};
         console.log(newToy);
-        fetch('http://localhost:5000/newtoy', {
+        fetch('https://lego-landia-server-emon-get-some-sleep.vercel.app/newtoy', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',

@@ -6,7 +6,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys")
+    fetch("https://lego-landia-server-emon-get-some-sleep.vercel.app/alltoys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
@@ -17,7 +17,7 @@ const AllToys = () => {
     
     const form = event.target;
     const searchText = form.search.value;
-    fetch(`http://localhost:5000/findtoys/${searchText}`)
+    fetch(`https://lego-landia-server-emon-get-some-sleep.vercel.app/findtoys/${searchText}`)
     .then((res) => res.json())
     .then((data) => setToys(data));
   };
