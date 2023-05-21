@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddToy = () => {
     const {user} = useContext(AuthContext);
@@ -40,7 +41,9 @@ const AddToy = () => {
     }
   return (
     <div className="h-auto  md:py-[40px] flex items-center justify-center bg-[#2BC0E4]">
-
+      <Helmet>
+        <title>Lego Landia | Add a Toy</title>
+      </Helmet>
       <div className="w-full md:w-[500px] ">
         <h2 className="font-bold text-center text-base md:text-[32px] text-white my-[50px]">ADD A PRODUCT</h2>
         <form onSubmit={handleAddingToys} className="">

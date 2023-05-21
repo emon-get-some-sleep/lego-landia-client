@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MySingleToys from "./MySingleToys";
+import { Helmet } from "react-helmet-async";
+
 
 const MyToys = () => {
     const [toys, setToys] = useState([]);
@@ -22,7 +24,9 @@ const MyToys = () => {
     
   return (
     <div>
-      
+      <Helmet>
+        <title>Lego Landia | My Toys</title>
+      </Helmet>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}

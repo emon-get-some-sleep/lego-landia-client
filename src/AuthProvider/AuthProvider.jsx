@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import app from '../firebase/firebase.config';
-
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 export const AuthContext = createContext('');
 const auth = getAuth(app)
 
@@ -61,9 +61,15 @@ const AuthProvider = ({children}) => {
 
     }
     return (
+        
         <AuthContext.Provider value={authBank}>
+            
             {children}
+            
+
+            
         </AuthContext.Provider>
+        
     );
 };
 

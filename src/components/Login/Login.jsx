@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
 
   const navigate = useNavigate();
@@ -62,6 +63,9 @@ const Login = () => {
   }
   return (
     <div className="h-[100vh] mt-[60px] flex items-center lego-bg justify-center bg-blue-500">
+      <Helmet>
+        <title>Lego Landia | Login</title>
+      </Helmet>
       {/* <div>
                 <img className='w-[400px] border-2 rounded-lg h-[400px]' src="https://images.pexels.com/photos/298825/pexels-photo-298825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
             </div> */}

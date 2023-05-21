@@ -1,5 +1,6 @@
 import React from "react";
 import { DynamicStar } from "react-dynamic-star";
+import { Helmet } from "react-helmet-async";
 import { FaCalculator } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 
@@ -9,6 +10,9 @@ const ViewDetails = () => {
   const {_id, picture, availableQuantity, rating, price, toyName, description, sellerEmail, sellerName, } = legoData;
   return (
     <div className="mt-[140px] bg-[#1CD8D2] min-h-[100vh] flex items-center justify-center">
+      <Helmet>
+        <title>Lego Landia | View Details</title>
+      </Helmet>
       <div className="flex flex-col lg:flex-row justify-between gap-6 md:p-5">
         <div className="bg-white flex-1 rounded-lg p-[40px]">
           <img
@@ -32,6 +36,7 @@ const ViewDetails = () => {
           </div>
         </div>
         <div className="flex-1 space-y-3">
+
             <h1 className="text-[#181D4E] font-bold text-[20px] md:text-[32px]">{sellerName}</h1>
             <h1 className="text-[#181D4E] font-bold text-[20px] md:text-[22px]">{sellerEmail}</h1>
             <h1 className="text-white font-bold text-sm md:text-[18px]"> <FaCalculator className="inline text-white mr-2" /> Available Quantity : {availableQuantity}</h1>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TableData from "./TableData";
+import { Helmet } from "react-helmet-async";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -22,6 +23,9 @@ const AllToys = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Lego Landia | All Toys</title>
+      </Helmet>
       <div className="flex items-center w-full justify-center bg-slate-500">
         <form onSubmit={searchResult} className="w-full">
           <div className="relative w-full flex flex-col items-center my-[40px]">
