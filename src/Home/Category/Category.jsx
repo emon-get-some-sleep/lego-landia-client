@@ -24,7 +24,7 @@ const Category = () => {
   }
   // console.log(data);
   return (
-    <div>
+    <div className="my-[80px]">
       <h3 className="text-center font-bold text-4xl my-[40px]">Categories</h3>
       <Tabs>
         <TabList>

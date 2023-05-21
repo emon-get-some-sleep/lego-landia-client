@@ -41,14 +41,13 @@ const Testimonial = () => {
           <FaQuoteRight className="text-[#2BB24C] text-base md:text-6xl  text-center" />{" "}
         </span>
         <p className="text-[#181D4E] my-[24px] w-full md:w-1/2 text-left text-sm md:text-lg md:leading-[34px]">
-          What a great store for the entire family! My kids love this place
-          because of the toys!
+        This store is perfect for the whole family! It's a fantastic place that children adore, thanks to the wide selection of toys available.
         </p>
         <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-            <img className="w-[40px] h-[40px] rounded-[50%]" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="" />
+            <img className="w-[40px] h-[40px] rounded-[50%]" src="https://i.dailymail.co.uk/i/pix/2016/02/16/14/314904EC00000578-0-image-a-18_1455633650354.jpg" alt="" />
             <div>
-            <p className="font-bold text-sm md:text-base text-[#181D4E]">Elia Williams</p>
-            <p className="text-[#646672] text-sm md:text-base">CEO, Business Co.</p>
+            <p className="font-bold text-sm md:text-base text-[#181D4E]">Emilia Page</p>
+            <p className="text-[#646672] text-sm md:text-base">Writer, Underthing press.</p>
             </div>
         </div>
       </div>
