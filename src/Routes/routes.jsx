@@ -11,6 +11,7 @@ import AddToy from "../components/AddToy/AddToy";
 import MyToys from "../components/MyToys/MyToys";
 import UpdateToy from "../components/UpdateToy/UpdateToy";
 import Notfound from "./Notfound";
+import PrivateRoutes from "./PrivateRoutes";
 
 
   const router = createBrowserRouter([
@@ -33,7 +34,7 @@ import Notfound from "./Notfound";
         },
         {
           path: '/viewdetails/:id',
-          element: <ViewDetails></ViewDetails>,
+          element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
           loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
         },
         {

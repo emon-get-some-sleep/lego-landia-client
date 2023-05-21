@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { FaGoogle, FaLocationArrow, FaLock } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -9,6 +9,9 @@ const Login = () => {
   const navigate = useNavigate();
   const { signIn, signInWithGoogle} = useContext(AuthContext);
 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+  console.log(from);
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -24,7 +27,7 @@ const Login = () => {
         'Welcome Back',
         'success'
       )
-      navigate('/')
+      navigate(from, {replace: true})
     })
     .catch(error => {
       Swal.fire({
@@ -45,7 +48,7 @@ const Login = () => {
         'Welcome Back',
         'success'
       )
-      navigate('/')
+      navigate(from, {replace: true})
     })
     .catch(error => {
       const warning = error.message;
