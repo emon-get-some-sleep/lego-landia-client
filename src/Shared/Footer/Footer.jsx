@@ -25,7 +25,7 @@ const Footer = () => {
                 <Link className='border hover:border-blue-400  rounded-full p-2'>
                     <FaLinkedinIn className='text-white' />
                 </Link>
-                <Link className='border hover:border-blue-400 mb-3 rounded-full p-2'>
+                <Link className='border hover:border-blue-400  rounded-full p-2'>
                     <FaInstagram className='text-white' />
                 </Link>
             </div>

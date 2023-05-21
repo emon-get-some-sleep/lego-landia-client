@@ -7,7 +7,7 @@ const Testimonial = () => {
     <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <div className="w-full md:col-span-1">
         <h2 className="text-sm font-bold text-[#F5F6F7]">Testiomonial</h2>
-        <h1 className=" text-base md:text-[35px] my-[21px] font-bold text-white">
+        <h1 className=" text-base md:text-[35px] my-[21px] leading-10 font-bold text-white">
           What Our Clients Say About Us
         </h1>
         <p className="text-[17px] text-[#D0D3DC] text-left">

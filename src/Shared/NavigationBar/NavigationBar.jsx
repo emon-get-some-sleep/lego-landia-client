@@ -20,12 +20,12 @@ const NavigationBar = () => {
     <div className="flex  items-center justify-between mt-[40px]">
       <div className="flex items-center">
         <img className="w-[40px] h-[70px]" src={logo} alt="" />
-        <h2 className="font-bold text-2xl">Lego Landia</h2>
+        <h2 className="font-bold text-[22px] md:text-2xl">Lego Landia</h2>
       </div>
 
       <div className="space-x-3 hidden md:block">
         <Link to='/' className="font-semibold text-[#141414] hover:text-violet-600 duration-300">Home</Link>
-        <Link to='/'  className="font-semibold text-[#141414] hover:text-violet-600 duration-300">About Us</Link>
+        <Link to='/blog'  className="font-semibold text-[#141414] hover:text-violet-600 duration-300">Blog</Link>
         <Link to='/'  className="font-semibold text-[#141414] hover:text-violet-600 duration-300">Contact</Link>
         <Link to='/alltoys'  className="font-semibold text-[#141414] hover:text-violet-600 duration-300">All Toys</Link>
       </div>
