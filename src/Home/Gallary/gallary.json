@@ -1,0 +1,39 @@
+[
+  {
+    "img": "https://dispatch.barnesandnoble.com/content/dam/ccr/h/worldoflego/01012023/25631_LEGO_PCS_1-3_City_01-01.jpg",
+    "title": "Lego City : Miniature",
+    "description": "Construct your very own city with us. A fun way to learn city architecture"
+  },
+  {
+    "img": "https://static.thcdn.com/images/large/webp/productimg/1600/1600/11340598-4984447027243650.jpg",
+    "title": "Adventure Island",
+    "description": "Embark on an exciting adventure on a mysterious island. Explore hidden treasures."
+  },
+  {
+    "img": "https://www.lego.com/cdn/cs/set/assets/bltb357374dc682597e/10497.png?format=webply&fit=bounds&quality=75&width=800&height=800&dpr=1",
+    "title": "Space Explorers",
+    "description": "Join our team of intrepid astronauts as we venture into the vastness of space."
+  },
+  {
+    "img": "https://ninjabrick.com/wp-content/uploads/2018/05/LEGO-75930-Indoraptor-Rampage-at-Lockwood-Estate.jpg.webp",
+    "title": "Dinosaur Discovery",
+    "description": "Travel back in time to the age of dinosaurs. Uncover fossilized remains, learn about different species, and witness the life of these magnificent creatures that once roamed the Earth."
+    },
+    {
+        "img": "https://s3-us-west-2.amazonaws.com/media.brothers-brick.com/2019/09/lego_75219_box_art-Imeperial-AT-Hauler-1024x768.jpeg",
+        "title": "Art Studio",
+        "description": "Unleash your creativity in our art studio. Experiment with various mediums, learn new techniques, and express yourself through paintings, sculptures, and more."
+        },
+        
+        {
+        "img": "https://cdn.thewirecutter.com/wp-content/uploads/2019/08/Robot-Kits-for-Kids-2x1-fullres5894.jpg?auto=webp&quality=75&crop=2:1&width=980&dpr=1.5",
+        "title": "Robotics Workshop",
+        "description": "Become a robotics engineer in our workshop. Build and program your own robots, learn about artificial intelligence, and participate in exciting robot competitions."
+        },
+        
+        {
+        "img": "https://m.media-amazon.com/images/I/81LbK4npQkL._AC_SX679_.jpg",
+        "title": "Nature Explorer",
+        "description": "Embark on a journey through nature's wonders. Hike through lush forests, observe diverse wildlife, and learn about ecosystems and conservation efforts."
+        }
+]
