@@ -18,7 +18,7 @@ const MyToys = () => {
     //     setToys(data);
     //   }
     // }, [user])
-    console.log(toys);
+    // console.log(toys);
     
   return (
     <div>
@@ -41,7 +41,7 @@ const MyToys = () => {
             {/* row 1 */}
 
             {
-            toys.map((toy, index) => <MySingleToys key={index} toy={toy}></MySingleToys>)
+            toys.map((toy, index) => <MySingleToys toys={toys} setToys={setToys} key={index} toy={toy}></MySingleToys>)
            }
           </tbody>
         </table>

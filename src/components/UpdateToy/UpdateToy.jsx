@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate('');
     const toyInfo = useLoaderData();
     const {_id, picture, availableQuantity, rating, price, toyName, description, sellerEmail, sellerName, subCategory} = toyInfo;
-    console.log(subCategory);
+    // console.log(subCategory);
     const handleUpdatingToys = (event) => {
         event.preventDefault();
 
@@ -21,7 +23,7 @@ const UpdateToy = () => {
         const description = form.description.value;
         const subCategory = form.subcategory.value;
         const newToy = {toyName, sellerName, sellerEmail, price, availableQuantity, description, picture, rating, subCategory};
-        console.log(newToy);
+        // console.log(newToy);
         fetch(`http://localhost:5000/update/${_id}`, {
           method: 'PUT',
           headers: {
@@ -31,7 +33,15 @@ const UpdateToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-          console.log(data);
+          // console.log(data);
+          if(data.modifiedCount > 0){
+            Swal.fire(
+              'Updated Successfully!',
+              'Thank You',
+              'success'
+            )
+            navigate('/mytoys')
+          }
         })
     }
     return (
