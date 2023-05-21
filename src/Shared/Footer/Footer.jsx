@@ -4,7 +4,7 @@ import { FaBeer, FaFacebook, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter }
 
 const Footer = () => {
     return (
-        <div className='bg-[#182352] flex items-center py-5 justify-center flex-col min-h-[60vh] mt-[60px]'>
+        <div className='bg-[#182352] flex items-center py-5 justify-center flex-col min-h-[60vh] mt-[150px]'>
             <div>
             <h2 className='text-[22px] sm:text-[44px] text-white font-bold'>Lego Landia</h2>
             </div>

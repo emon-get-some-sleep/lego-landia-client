@@ -1,5 +1,6 @@
 import React from 'react';
 import { DynamicStar } from 'react-dynamic-star';
+import LazyLoad from 'react-lazy-load';
 import { useNavigate } from 'react-router-dom';
 
 const SingleDetail = ({each}) => {
@@ -11,11 +12,13 @@ const SingleDetail = ({each}) => {
     }
     return (
         <div className="w-full sm:w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col items-center">
+              <LazyLoad>
               <img
                 className="w-full my-3 sm:w-[400px] h-[200px] rounded-lg"
                 src={picture}
                 alt=""
               />
+              </LazyLoad>
               <h2 className="text-[#181D4E] mb-2 font-bold text-lg">
                 {toyName}
               </h2>

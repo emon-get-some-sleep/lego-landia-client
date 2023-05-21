@@ -29,16 +29,16 @@ const Category = () => {
       <Tabs>
         <TabList>
           <div className="cursor-pointer grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] bg-gradient-to-r from-[#7474BF] to-[#348AC7] p-4 text-white">
-            <Tab onClick={() => fetchEducational('educational')} className="bg-[#12AEE0] font-bold text-white px-8 py-3 rounded-lg">
+            <Tab onClick={() => fetchEducational('educational')} className="bg-[#12AEE0] hover:bg-[#0c6e8e] font-bold text-white px-8 py-3 rounded-lg">
               Educational
             </Tab>
-            <Tab onClick={() => fetchEducational('recreational')}  className="bg-[#12AEE0] font-bold text-white px-8 py-3 rounded-lg">
+            <Tab onClick={() => fetchEducational('recreational')}  className="bg-[#12AEE0] font-bold text-white px-8  hover:bg-[#0c6e8e] py-3 rounded-lg">
               Recrational
             </Tab>
-            <Tab  onClick={() => fetchEducational('productive')}  className="bg-[#12AEE0] font-bold text-white px-8 py-3 rounded-lg">
+            <Tab  onClick={() => fetchEducational('productive')}  className="bg-[#12AEE0] font-bold text-white px-8 py-3  hover:bg-[#0c6e8e] rounded-lg">
               Productive
             </Tab>
-            <Tab  onClick={() => fetchEducational('exploration')}  className="bg-[#12AEE0] font-bold text-white px-8 py-3 rounded-lg">
+            <Tab  onClick={() => fetchEducational('exploration')}  className="bg-[#12AEE0] font-bold text-white px-8  hover:bg-[#0c6e8e] py-3 rounded-lg">
               Exploration
             </Tab>
           </div>
