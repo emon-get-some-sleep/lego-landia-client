@@ -22,8 +22,8 @@ const UpdateToy = () => {
         const subCategory = form.subcategory.value;
         const newToy = {toyName, sellerName, sellerEmail, price, availableQuantity, description, picture, rating, subCategory};
         console.log(newToy);
-        fetch('http://localhost:5000/newtoy', {
-          method: 'POST',
+        fetch(`http://localhost:5000/update/${_id}`, {
+          method: 'PUT',
           headers: {
             'content-type': 'application/json',
           },

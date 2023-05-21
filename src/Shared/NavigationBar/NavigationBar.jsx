@@ -30,12 +30,14 @@ const NavigationBar = () => {
         <Link to='/alltoys'  className="font-semibold text-[#141414] hover:text-violet-600 duration-300">All Toys</Link>
       </div>
       
-      <div className="tooltip hidden md:flex items-center gap-3" data-tip={user?.displayName}>
+      <div className=" hidden md:flex items-center gap-3" >
         {!user ?
         <Link to="/login"><button className="hidden md:block bg-[#12AEE0]  text-white font-medium text-xl border px-8 py-3 hover:bg-[#164f62]  rounded-lg">Login</button></Link>
         :
         <>
+        <div className="tooltip" data-tip={user?.displayName}>
         <img src={user.photoURL} className="w-[50px] h-[50px] rounded-[50%]" alt="" />
+        </div>
         <button onClick={handleLogOut} className="text-sm px-3 hover:bg-[#104d63] font-bold h-[35px] text-white bg-[#12AEE0]">Sign Out</button>
         <Link to="/mytoys">
         <button className="text-sm px-3 hover:bg-[#104d63] font-bold h-[35px] text-white bg-[#12AEE0]">My Toys</button>
