@@ -10,12 +10,14 @@ import AllToys from "../components/AllToys/AllToys";
 import AddToy from "../components/AddToy/AddToy";
 import MyToys from "../components/MyToys/MyToys";
 import UpdateToy from "../components/UpdateToy/UpdateToy";
+import Notfound from "./Notfound";
 
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <Notfound></Notfound>,
       children: [
         {
           path: '/',
