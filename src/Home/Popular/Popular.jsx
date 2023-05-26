@@ -3,7 +3,7 @@ import LazyLoad from "react-lazy-load";
 
 const Popular = () => {
   return (
-    <div className="mt-[120px] mb-[80px] bg-[#F5F6F7]">
+    <div className="mt-[120px] py-6 mb-[80px] bg-[#F5F6F7]">
       <h2 className="font-bold text-[#181D4E] text-sm text-center">
         Lego Landia Toys & Games
       </h2>
